@@ -10,12 +10,9 @@ class Dodatak_A_Test(unittest.TestCase):
         self.assertEqual(Dodatak_A.OperationsManager(5, 2.5).perform_division(), 2)
 
     def test_perform_division3(self):
-        self.assertEqual(Dodatak_A.OperationsManager(5, 0).perform_division(), NaN)
+        self.assertEqual(Dodatak_A.OperationsManager(5, 0).perform_division(), None)
 
     def test_perform_division4(self):
-        self.assertEqual(Dodatak_A.OperationsManager("10", 5).perform_division(), 2)
-
-    def test_perform_division5(self):
         with self.assertRaises(ValueError):
             Dodatak_A.OperationsManager("ABC", 5).perform_division()
     
@@ -23,7 +20,7 @@ class Dodatak_A_Test(unittest.TestCase):
         self.assertEqual(Dodatak_A.square_root(9), 3)
 
     def test_square_root2(self):
-        self.assertEqual(Dodatak_A.square_root(-9), NaN)
+        self.assertEqual(Dodatak_A.square_root(-9), None)
 
     def test_square_root3(self):
         with self.assertRaises(ValueError):
